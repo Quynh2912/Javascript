@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+        <meta charset="utf-8"/>
+        <title> Join Github.Github</title>
+        <link rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="container">
+        <form name="contact" onsubmit="return CheckForm();" method="post" class="contact" style="font-family: 'Times New Roman', Times, serif">
+            <h2 align="left" style="color:rgb(0, 255, 34); font-size: 50px" > Create an account </h2>
+            <ul align="left">
+                <li>
+                    <label for="name"> Username <span class="required" class="required">*</span></label>
+                    <input id="name" name="name" type="text" class="text" tabindex="1"/>
+                    <p class="hide error" id="name-error"></p>
+                </li>
+                <li>
+                    <label for="email"> Email address <span class="required" class="required">*</span></label>
+                    <input id="email" name="email" placeholder="you@gmail.com" type="text" class="text" tabindex="1"/>
+                    <p class="hide error" id="email-error"></p>
+                </li>
+                <li>
+                    <label for="pass"> Password <span class="required" class="required">*</span></label>
+                    <input id="pass" name="pass" type="text" class="text" tabindex="1"/>
+                    <p class="hide error" id="pass-error"></p>
+                </li>
+                <li>
+                    <input type="submit" name="create an account" value="Create an account" class="btn-primary" style="margin-right: 20px" onclick="Createanaccount()"/>
+                    <input type="reset" name="delete" value=" Delete" class="btn1-primary" style="margin-right: 15px" onclick="Delete()"/>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <script>
+        function CheckForm(){
+            var user, email, pass, a=document.contact;
+            if(a.name.value==""){
+                document.getElementById("name-error").style.display='block';
+                document.getElementById("name-error").innerHTML='Vui lòng nhập họ tên';
+                a.name.focus();
+                return false;
+            }
+            else document.getElementById("name-error").style.display='none';
+            if(a.email.value==""){
+                document.getElementById("email-error").style.display='block';
+                document.getElementById("email-error").innerHTML='Vui lòng nhập email';
+                a.email.focus();
+                return false;
+            }
+            else document.getElementById("email-error").style.display='none';
+            if(a.pass.value==""){
+                document.getElementById("pass-error").style.display='block';
+                document.getElementById("pass-error").innerHTML='Vui lòng nhập password';
+                a.pass.focus();
+                return false;
+            }
+            else document.getElementById("pass-error").style.display='none';
+            return true;
+        }
+                
+        user= contact.name.value; 
+        email=contact.email.value;
+        pass=contact.pass.value;
+        alert("Tạo tài khoản thành công!!!");
+
+        function Delete()
+            {
+              Delete.user.value="0";
+              Delete.email.value="0";
+              Delete.pass.value="0";
+            }
+    </script>
+</body>
+</html>
